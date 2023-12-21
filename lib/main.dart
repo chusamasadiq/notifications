@@ -858,26 +858,19 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> _showNotificationWithTextAction() async {
     const AndroidNotificationDetails androidNotificationDetails =
-        AndroidNotificationDetails(
-      'your channel id',
-      'your channel name',
-      channelDescription: 'your channel description',
-      importance: Importance.max,
-      priority: Priority.high,
-      ticker: 'ticker',
-      actions: <AndroidNotificationAction>[
-        AndroidNotificationAction(
-          'text_id_1',
-          'Enter Text',
-          icon: DrawableResourceAndroidBitmap('food'),
-          inputs: <AndroidNotificationActionInput>[
-            AndroidNotificationActionInput(
-              label: 'Enter a message',
-            ),
-          ],
-        ),
-      ],
-    );
+        AndroidNotificationDetails('your channel id', 'your channel name',
+            channelDescription: 'your channel description',
+            importance: Importance.max,
+            priority: Priority.high,
+            ticker: 'ticker',
+            actions: <AndroidNotificationAction>[
+          AndroidNotificationAction(
+            'notificationCancelId',
+            'Cancel',
+            cancelNotification: true,
+            showsUserInterface: true,
+          ),
+        ]);
 
     const DarwinNotificationDetails darwinNotificationDetails =
         DarwinNotificationDetails(
